@@ -7,12 +7,18 @@ import ProductShowPage from './components/ProductShowPage';
 
 // import productData from './data/product';
 // import reviewData from './data/review';
+
+import ProductIndexPage from './components/ProductIndexPage';
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     
     <ProductShowPage />
+
+    <ProductIndexPage/>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
