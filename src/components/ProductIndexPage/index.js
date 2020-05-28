@@ -10,6 +10,19 @@ class ProductIndexPage extends Component {
         this.state = {
             products: productsData
         }
+        this.deleteProduct = this.deleteProduct.bind(this)
+    }
+
+    deleteProduct(id){
+        console.log(id);
+        this.setState((state) => {
+            return {
+                products: state.products.filter((product) => {
+                    return product.id !== id;
+                })
+            }
+        })
+
     }
 
     render() {
@@ -17,12 +30,12 @@ class ProductIndexPage extends Component {
             <main className='page'>
                 { this.state.products.map((product) => {
                     return(
-                         <ProductDetails key={product.id} {...product} />
+                        <ProductDetails key={product.id} {...product} deleteProduct={this.deleteProduct}/>
                             //   id={product.id}
                             //   price={product.price}
                             //   seller={product.seller}
                             // />
-                        )
+                    )
                 })}
 
             </main>
