@@ -3,23 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import ProductDetails from './components/ProductDetails';
 // import ReviewDetails from './components/ReviewDetails'
-import ProductShowPage from './components/ProductShowPage';
+// import ProductShowPage from './components/ProductShowPage';
 
 // import productData from './data/product';
 // import reviewData from './data/review';
 
-import ProductIndexPage from './components/ProductIndexPage';
+// import ProductIndexPage from './components/ProductIndexPage';
+
+import App from './components/App';
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     
-    <ProductShowPage />
+  //   <ProductShowPage />
 
-    <ProductIndexPage/>
-    
-  </React.StrictMode>,
+  //   <ProductIndexPage/>
+
+  // </React.StrictMode>,
+  <App/>,
   document.getElementById('root')
 );
 
