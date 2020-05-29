@@ -67,7 +67,7 @@ class ProductShowPage extends Component {
 
 
     render() {
-        const { id, title, description, created_at, seller, reviews } = this.state.product;
+        const { id, title, description, created_at, seller, reviews, sale_price } = this.state.product;
         return (
             <main className='page'>
                 {
@@ -75,6 +75,7 @@ class ProductShowPage extends Component {
                     <ProductDetails 
                         id={id}
                         title={title}
+                        price={sale_price}
                         description={description}
                         created_at={created_at}
                         seller={seller}
