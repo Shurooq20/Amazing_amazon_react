@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
-import productsData from '../../data/products';
+// import productsData from '../../data/products';
 // import { render } from '@testing-library/react';
 import ProductDetails from '../ProductDetails';
 import ProductForm from '../ProductForm';
 import { Link } from 'react-router-dom';
+import { Product } from '../../requests';
 
 
 class ProductIndexPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: productsData
+            products: []
         }
         this.deleteProduct = this.deleteProduct.bind(this);
         this.createProduct = this.createProduct.bind(this);
     }
 
+    componentDidMount() {
+        Product.all().then((products) => {
+            // console.log(products)
+            this.setState({
+                products: products
+            })
+        })
+    }
     deleteProduct(id){
         console.log(id);
         this.setState((state) => {
