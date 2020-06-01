@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ProductIndexPage from '../ProductIndexPage';
 import ProductShowPage from '../ProductShowPage';
-import NewProductPage from '../NewProductPage'
+import NewProductPage from '../NewProductPage';
+import SignInPage from '../SignInPage';
 import NavBar from '../NavBar';
 
 
@@ -32,7 +33,8 @@ class App extends Component {
                 <Switch>
                 <Route path='/products' exact component={ ProductIndexPage }/>
                 <Route path='/products/new' component={ NewProductPage } />
-                <Route path='/products/:id' component={ ProductShowPage } />  
+                <Route path='/products/:id' component={ ProductShowPage } />
+                <Route path="/sign_in" component={SignInPage} />  
                 </Switch>    
             </BrowserRouter>
         )
