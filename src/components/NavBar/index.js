@@ -1,16 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function NavBar() {
+function NavBar(props) {
+  const { currentUser } = props; // object destructuring
   return(
-    <div>
-      <NavLink to='/'>Home</NavLink>
-      ||
-      <NavLink to='/products'>Product Index</NavLink>
-      ||
-      <NavLink to='/products/new'>Product New Page</NavLink>
-    </div>
+    <nav>
+      <NavLink to='/questions'>Questions Index</NavLink>
+      <NavLink to='/questions/new'>New Question?</NavLink>
+      { !currentUser && <NavLink to='/sign_in'>Sign In</NavLink> }
+      { currentUser && <span>{currentUser.first_name}</span>}
+    </nav>
   )
 }
+
 
 export default NavBar

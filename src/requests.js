@@ -40,3 +40,31 @@ export const Session = {
     // to use create
     // Session.create({email: '', password: ''}).then(data => { console.log(data)})
 }
+
+export const User = {
+    current() {
+        return fetch(`${BASE_URL}/users/current`, {
+            method: 'GET',
+            credentials: 'include'
+        }).then(res => res.json());
+    },
+
+    create(params) {
+        return fetch(`${BASE_URL}/users`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(params)
+        }).then((res) => res.json())
+    }
+}
+
+// shorthand for doing: { Question: Question, Session: Session }
+// this works because there are variables called Question & Session
+export default {
+  Product,
+  Session,
+  User
+}
